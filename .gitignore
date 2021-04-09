@@ -1,0 +1,4 @@
+# Log and databases #
+*.db
+
+__pycache__/
