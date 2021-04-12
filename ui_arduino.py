@@ -29,9 +29,9 @@ class Ui_MainWindow(object):
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
         self.frame.setStyleSheet(u"QFrame {\n"
-"	border:none;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"}")
+                                 "	border:none;\n"
+                                 "	background-color: rgb(35, 35, 35);\n"
+                                 "}")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.lbl_durum = QLabel(self.frame)
@@ -47,9 +47,9 @@ class Ui_MainWindow(object):
         self.list_widget.setObjectName(u"list_widget")
         self.list_widget.setGeometry(QRect(10, 110, 681, 381))
         self.list_widget.setStyleSheet(u"QListWidget{\n"
-"	border-radius: 10px;\n"
-"	background-color: rgb(58, 56, 56);\n"
-"}")
+                                       "	border-radius: 10px;\n"
+                                       "	background-color: rgb(58, 56, 56);\n"
+                                       "}")
 
         self.verticalLayout.addWidget(self.frame)
 
@@ -58,10 +58,14 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Arduino ve SQLite", None))
-        self.lbl_durum.setText(QCoreApplication.translate("MainWindow", u"INCOMING DATA", None))
-    # retranslateUi
+        MainWindow.setWindowTitle(
+            QCoreApplication.translate("MainWindow", u"Arduino ve SQLite",
+                                       None))
+        self.lbl_durum.setText(
+            QCoreApplication.translate("MainWindow", u"INCOMING DATA", None))
 
+    # retranslateUi

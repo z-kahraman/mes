@@ -1,8 +1,9 @@
 import sqlite3
 from sqlite3 import Error
 
+
 def create_connection(db_file):
-    """ create a database connection to the SQLite database
+    """create a database connection to the SQLite database
         specified by db_file
     :param db_file: database file
     :return: Connection object or None
@@ -15,8 +16,9 @@ def create_connection(db_file):
         print(e)
     return conn
 
+
 def create_table(conn, create_table_sql):
-    """ create a table from the create_table_sql statement
+    """create a table from the create_table_sql statement
     :param conn: Connection object
     :param create_table_sql: a CREATE TABLE statement
     :return:
@@ -27,7 +29,8 @@ def create_table(conn, create_table_sql):
     except Error as e:
         print(e)
 
-def  insertVariableIntoTable(machine, value, send_date):
+
+def insertVariableIntoTable(machine, value, send_date):
     try:
         sqliteConnection = sqlite3.connect("arduino.db")
         cursor = sqliteConnection.cursor()
@@ -45,12 +48,12 @@ def  insertVariableIntoTable(machine, value, send_date):
 
     except Error:
         print("Failed to insert Python variable into sqlite table", Error)
-    
+
     finally:
-        if (sqliteConnection):
+        if sqliteConnection:
             sqliteConnection.close()
             print("The SQL connection is closed...")
-            
+
 
 def main():
     database = r"arduino.db"
@@ -72,5 +75,6 @@ def main():
     else:
         print("Error! cannot create the database connection.")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

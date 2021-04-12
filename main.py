@@ -35,8 +35,11 @@ def on_connect(client, userdata, flags, rc):
 @QtCore.Slot(int)
 def on_message(client, userdata, message):
     data = str(message.payload.decode("utf-8"))
-    window.lbl_durum.setText("{} -> {}".format("\
-        Incoming Data", message.payload.decode("utf-8")))
+    window.lbl_durum.setText("{} -> {}".format(
+        "\
+        Incoming Data",
+        message.payload.decode("utf-8"),
+    ))
     print("Message Received-> " + message.topic + " " + data)
     now = datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
     print("type data {}".format(type(data)))
@@ -48,7 +51,7 @@ def on_message(client, userdata, message):
     window.list_durum.sortItems(Qt.DescendingOrder)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
 
